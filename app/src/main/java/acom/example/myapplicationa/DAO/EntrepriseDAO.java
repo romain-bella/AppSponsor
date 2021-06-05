@@ -2,12 +2,16 @@ package acom.example.myapplicationa.DAO;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
-import acom.example.myapplicationa.Metier.Entreprise;
+import java.util.ArrayList;
 
-public class EntrepriseDAO {
+import acom.example.myapplicationa.Metier.Entreprise;
+import acom.example.myapplicationa.Metier.Poste;
+
+public class EntrepriseDAO extends DAO<Entreprise> {
     private SQLiteSponsor dbJudo;
     private static final String Table_Entreprise= "Entreprise";
     private static final String Col_Id_E = "id_E";
@@ -64,5 +68,41 @@ public class EntrepriseDAO {
         open();
         db.delete(Table_Entreprise,Col_Id_E+"="+e.getId_E(),null);
         db.close();
+    }
+    public int compte(){
+        int nbEnt = 0;
+        open();
+        Cursor curseur = db.query(Table_Entreprise,null,null,null,null,null,null,null);
+        curseur.moveToFirst();
+        nbEnt = curseur.getCount();
+        close();
+        return nbEnt;
+    }
+    public Entreprise read(long id) {
+        open();
+        Entreprise laEntreprise;
+        db.isOpen();
+        Cursor curseur = db.query(Table_Entreprise, null, Col_Id_E+"="+id,null,null,null,null);
+        curseur.moveToFirst();
+        laEntreprise = new Entreprise(curseur.getInt(0),curseur.getString(1),curseur.getString(2),curseur.getString(3),curseur.getString(4), curseur.getString(5),curseur.getString(6));
+        curseur.close();
+        close();
+        return laEntreprise;
+    }
+    public ArrayList<Entreprise> read() {
+        open();
+        Entreprise laEntreprise;
+        ArrayList<Entreprise> lesEntreprises = new ArrayList<>();
+        db.isOpen();
+        Cursor curseur = db.query (Table_Entreprise, null,null,null,null,null,null);
+        curseur.moveToFirst();
+        for (int i=1;i<=curseur.getCount();i++){
+            laEntreprise = new Entreprise(curseur.getInt(0),curseur.getString(1),curseur.getString(2),curseur.getString(3),curseur.getString(4), curseur.getString(5),curseur.getString(6));
+            lesEntreprises.add(laEntreprise);
+            curseur.moveToNext();
+        }
+        curseur.close();
+        close();
+        return lesEntreprises;
     }
 }

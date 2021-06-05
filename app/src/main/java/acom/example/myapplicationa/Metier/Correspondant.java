@@ -1,8 +1,11 @@
 package acom.example.myapplicationa.Metier;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.HashMap;
 
-public class Correspondant {
+public class Correspondant /*implements Parcelable*/ {
     private int id_correspondant;
     private String nom_co;
     private String prenom_co;
@@ -20,6 +23,17 @@ public class Correspondant {
         this.mail = mail;
         uneEntreprise=uneE;
         unPoste=unP;
+        lesDonnations = new HashMap<Saison, Float>();
+    }
+
+    public Correspondant (Correspondant unCo){
+        id_correspondant=unCo.getId_correspondant();
+        nom_co=unCo.getNom_co();
+        prenom_co=unCo.getPrenom_co();
+        telephone=unCo.getTelephone();
+        mail=unCo.getTelephone();
+        uneEntreprise=unCo.getUneEntreprise();
+        unPoste= unCo.getUnPoste();
         lesDonnations = new HashMap<Saison, Float>();
     }
 
@@ -85,14 +99,43 @@ public class Correspondant {
 
     @Override
     public String toString() {
-        return "Correspondant{" +
-                "id_correspondant=" + id_correspondant +
-                ", nom_co='" + nom_co + '\'' +
-                ", prenom_co='" + prenom_co + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", mail='" + mail + '\'' +
-                ", uneEntreprise=" + uneEntreprise +
-                ", unPoste=" + unPoste +
-                '}';
+        return id_correspondant+ " " + nom_co + " "+ prenom_co + " "+ telephone + " " + mail + " " +
+                "  Entreprise: " + uneEntreprise.getRaison_sociale() +
+                "  Poste: " + unPoste.getNom_poste();
     }
+
+/*
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    protected Correspondant(Parcel in) {
+        this.id_correspondant = in.readInt();
+        this.nom_co = in.readString();
+        this.prenom_co = in.readString();
+        this.telephone = in.readString();
+        this.mail = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeInt(id_correspondant);
+        parcel.writeString(nom_co);
+        parcel.writeString(prenom_co);
+        parcel.writeString(telephone);
+        parcel.writeString(mail);
+    }
+
+    public static final Parcelable.Creator<Correspondant> CREATOR = new Parcelable.Creator<Correspondant>() {
+        @Override
+        public Correspondant createFromParcel(Parcel source) {
+            return new Correspondant(source);
+        }
+
+        @Override
+        public Correspondant[] newArray(int size) {
+            return new Correspondant[size];
+        }
+    };*/
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import acom.example.myapplicationa.Metier.Poste;
 import acom.example.myapplicationa.Metier.Saison;
 
-public class SaisonDAO {
+public class SaisonDAO extends DAO<Saison>{
 
     private SQLiteSponsor dbJudo;
     private static final String Table_Saison= "Saison";

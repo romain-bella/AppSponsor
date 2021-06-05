@@ -1,8 +1,9 @@
+CREATE TABLE Donner (id_saison integer, id_correspondant integer, montantDon REAL, dateDon date, constraint pk_donner PRIMARY KEY (id_saison, id_correspondant), constraint fk1_donner FOREIGN KEY (id_saison) REFERENCES Saison (id_saison), constraint fk2_donner FOREIGN KEY (id_correspondant) REFERENCES Correspondant (id_correspondant));
+INSERT INTO Poste values (1, 'Chef');
+INSERT INTO Entreprise VALUES (1,'LAFIRST','Courtomere','rue que personne connait','77390','0601060106','unmail@lemail');
+INSERT INTO Correspondant VALUES (1,'Charial','Julian', '0106010601', 'charial@sonmail',1,1);
+Insert INTO Saison values (1,'2019','2020');
+CREATE TABLE Correspondant (id_correspondant integer primary key autoincrement, nom varchar(50), prenom varchar(50), telephone char(10), mail varchar(50), id_E integer, id_poste integer, constraint fk1_co FOREIGN KEY (id_E) REFERENCES Entreprise (id_E), constraint fk2_co FOREIGN KEY (id_poste) REFERENCES Poste (id_poste));
 CREATE TABLE Poste (id_poste integer primary key autoincrement, nom_poste varchar(50));
 CREATE TABLE Entreprise (id_E integer primary key autoincrement, raison_sociale varchar(50), ville varchar (50), rue varchar(50), CP char(5), telephone char(10), mail varchar(50));
 CREATE TABLE Saison (id_saison integer primary key autoincrement, dateDebut date, dateFin date);
-CREATE TABLE Correspondant (id_correspondant integer primary key autoincrement, nom varchar(50), prenom varchar(50), telephone char(10), mail varchar(50), id_E integer, id_poste integer, constraint fk1_co FOREIGN KEY (id_E) REFERENCES Entreprise (id_E), constraint fk2_co FOREIGN KEY (id_poste) REFERENCES Poste (id_poste));
-CREATE TABLE Donner (id_saison integer, id_correspondant integer, montantDon REAL, dateDon date, constraint pk_donner PRIMARY KEY (id_saison, id_correspondant), constraint fk1_donner FOREIGN KEY (id_saison) REFERENCES Saison (id_saison), constraint fk2_donner FOREIGN KEY (id_correspondant) REFERENCES Correspondant (id_correspondant));
-Insert INTO Poste values (1, 'Chef');
-INSERT INTO Entreprise VALUES (1,'LAFIRST','Courtomere','rue que personne connait','77390','0601060106','unmail@lemail');
-INSERT INTO Correspondant VALUES (1,'Charial','Julian', '0106010601', 'charial@sonmail',1,1);

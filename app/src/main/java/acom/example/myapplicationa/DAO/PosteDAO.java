@@ -1,4 +1,4 @@
-package com.gabriel.ppeandroid.Dao;
+package acom.example.myapplicationa.DAO;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,9 +9,10 @@ import java.util.ArrayList;
 
 import acom.example.myapplicationa.DAO.DAO;
 import acom.example.myapplicationa.DAO.SQLiteSponsor;
+import acom.example.myapplicationa.Metier.Correspondant;
 import acom.example.myapplicationa.Metier.Poste;
 
-public class PosteDAO {
+public class PosteDAO extends DAO<Poste>{
 
     private SQLiteSponsor dbJudo;
     private static final String Table_Poste = "Poste";
@@ -56,10 +57,19 @@ public class PosteDAO {
         db.close();
     }
 
+    public int compte(){
+        int nbpostes = 0;
+        open();
+        Cursor curseur = db.query(Table_Poste,null,null,null,null,null,null,null);
+        curseur.moveToFirst();
+        nbpostes = curseur.getCount();
+        close();
+        return nbpostes;
+    }
+
     public Poste read(long id) {
         open();
         Poste lePoste;
-        int i=0;
         db.isOpen();
         Cursor curseur = db.query(Table_Poste, null, Col_Id_POST+"="+id,null,null,null,null);
         curseur.moveToFirst();

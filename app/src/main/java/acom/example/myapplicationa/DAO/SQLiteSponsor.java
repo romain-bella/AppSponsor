@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 public class SQLiteSponsor extends SQLiteOpenHelper {
 
     BufferedReader lecteur = null;
-    private static final int DATABASE_VERSION=2;
+    private static final int DATABASE_VERSION=5;
     private static final String DATABASE_NAME="GestionSponsor";
     private Context context = null;
 
