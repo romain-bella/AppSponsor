@@ -17,13 +17,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IHM.ActivityCorrespondant">
 
+        <activity android:name=".IHM.ActivityCorrespondant">
         </activity>
         <activity android:name=".IHM.PopupAjoutCo"
             android:theme="@style/Theme.MyApplicationa.Popup"></activity>
-
         <activity android:name=".IHM.PopupSuppCo"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+
+        <activity android:name=".IHM.ActivityEntreprise"></activity>
+        <activity android:name=".IHM.PopupAjoutEn"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+        <activity android:name=".IHM.PopupSuppEn"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+
+        <activity android:name=".IHM.ActivityPoste"></activity>
+        <activity android:name=".IHM.PopupAjoutPo"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+        <activity android:name=".IHM.PopupSuppPo"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+
+        <activity android:name=".IHM.ActivitySaison"></activity>
+        <activity android:name=".IHM.PopupAjoutSa"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+        <activity android:name=".IHM.PopupSuppSa"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+
+        <activity android:name=".IHM.ActivityDonner"></activity>
+        <activity android:name=".IHM.PopupAjoutDo"
+            android:theme="@style/Theme.MyApplicationa.Popup"></activity>
+        <activity android:name=".IHM.PopupSuppDo"
             android:theme="@style/Theme.MyApplicationa.Popup"></activity>
     </application>
 

@@ -78,6 +78,17 @@ public class EntrepriseDAO extends DAO<Entreprise> {
         close();
         return nbEnt;
     }
+
+    public int last(){
+        open();
+        Cursor curseur = db.query (Table_Entreprise, null,null,null,null,null,null);
+        curseur.moveToLast();
+        int i = curseur.getInt(0);
+        curseur.close();
+        close();
+        return i;
+    }
+
     public Entreprise read(long id) {
         open();
         Entreprise laEntreprise;

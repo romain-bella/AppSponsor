@@ -12,13 +12,13 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
-import acom.example.myapplicationa.Metier.Entreprise;
+import acom.example.myapplicationa.Metier.Correspondant;
+import acom.example.myapplicationa.Metier.Saison;
 import acom.example.myapplicationa.R;
 
-public class EntrepriseAdapter extends ArrayAdapter<Entreprise> {
-
-    public EntrepriseAdapter(Context context, ArrayList<Entreprise> listeEntreprise){
-        super(context, 0, listeEntreprise);
+public class SaisonAdapter extends ArrayAdapter<Saison> {
+    public SaisonAdapter(Context context, ArrayList<Saison> listeS){
+        super(context, 0, listeS);
     }
 
     @NonNull
@@ -35,16 +35,16 @@ public class EntrepriseAdapter extends ArrayAdapter<Entreprise> {
     private View initView(int position, View convertView, ViewGroup parent){
         if (convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.entreprise_spinner, parent, false
+                    R.layout.saison_spinner, parent, false
             );
         }
-        TextView textViewName = convertView.findViewById(R.id.textView17);
+        TextView dd = convertView.findViewById(R.id.textView24);
+        TextView df = convertView.findViewById(R.id.textView25);
 
-        Entreprise currentItem = getItem(position);
+        Saison currentItem = getItem(position);
 
-        textViewName.setText(currentItem.getRaison_sociale());
+        dd.setText(currentItem.getDateDebut());
+        df.setText(currentItem.getDateFin());
         return convertView;
     }
 }
-
-

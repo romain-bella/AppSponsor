@@ -23,9 +23,7 @@ public class Poste {
 
     @Override
     public String toString() {
-        return "Poste{" +
-                "id_poste=" + id_poste +
-                ", nom_poste='" + nom_poste + '\'' +
-                '}';
+        return id_poste +
+                " " + nom_poste;
     }
 }

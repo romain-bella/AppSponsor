@@ -111,7 +111,7 @@ public class PopupAjoutCo extends  ActivityCorrespondant{
             //uneEntreprise = new Entreprise()
             //nvCorrespondant = new Correspondant(nom, prenom, Tel, mail, )
             bddCo.open();
-            Correspondant leCo = new Correspondant(bddCo.compte()+1,nom,prenom,Tel,mail,Entselectionner,Posteselectionner);
+            Correspondant leCo = new Correspondant(bddCo.last()+1,nom,prenom,Tel,mail,Entselectionner,Posteselectionner);
             bddCo.insert(leCo);
             bddCo.close();
             Intent intent = new Intent (getApplicationContext(), ActivityCorrespondant.class);
@@ -122,15 +122,17 @@ public class PopupAjoutCo extends  ActivityCorrespondant{
     private void initList(){
         bddPo.open();
         listPoste = new ArrayList<>();
-        for (int i=1;i<=bddPo.compte();i++){
+        listPoste = bddPo.read();
+        /*for (int i=1;i<=bddPo.compte();i++){
            listPoste.add(new Poste(bddPo.read(i).getId_poste(), bddPo.read(i).getNom_poste()));
-        }
+        }*/
         bddPo.close();
         bddEn.open();
         listEn = new ArrayList<>();
-        for (int n=1;n<=bddEn.compte();n++){
+        listEn = bddEn.read();
+        /*for (int n=1;n<=bddEn.compte();n++){
             listEn.add(new Entreprise(bddEn.read(n).getId_E(), bddEn.read(n).getRaison_sociale(), bddEn.read(n).getVille(), bddEn.read(n).getRue(), bddEn.read(n).getCP(), bddEn.read(n).getTelephone(), bddEn.read(n).getMail()));
-        }
+        }*/
         bddEn.close();
     }
 }

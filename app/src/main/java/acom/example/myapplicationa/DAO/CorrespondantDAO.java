@@ -80,6 +80,16 @@ public class CorrespondantDAO extends DAO<Correspondant>{
         close();
     }
 
+    public int last(){
+        open();
+        Cursor curseur = db.query (Table_Correspondant, null,null,null,null,null,null);
+        curseur.moveToLast();
+        int i = curseur.getInt(0);
+        curseur.close();
+        close();
+        return i;
+    }
+
     public int compte(){
         int nbCo = 0;
         open();

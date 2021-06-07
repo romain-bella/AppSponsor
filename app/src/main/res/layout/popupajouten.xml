@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#9E2222"
+        android:background="#D62727"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/textView10"
             android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:gravity="center"
-            android:text="TextView" />
+            android:layout_height="wrap_content"
+            android:text="Nouvelle Entreprise"
+            android:textSize="30sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Nom" />
+                android:text="Raison Sociale" />
 
             <EditText
                 android:id="@+id/searchFilterCo"
@@ -48,7 +47,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Prenom" />
+                android:text="Ville" />
 
             <EditText
                 android:id="@+id/editText1"
@@ -69,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Telephone" />
+                android:text="Rue" />
 
             <EditText
                 android:id="@+id/editText2"
@@ -90,7 +89,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="eMail" />
+                android:text="CP" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -106,17 +105,19 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/textView19"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Poste" />
+                android:text="Telephone"
+                android:gravity="center"/>
 
-            <Spinner
-                android:id="@+id/postespinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -125,30 +126,26 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="Entreprise" />
+                android:text="Mail"
+                android:gravity="center"/>
 
-            <Spinner
-                android:id="@+id/entreprisespinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="text" />
         </LinearLayout>
 
         <Button
-            android:id="@+id/buttonM"
+            android:id="@+id/nouveauCo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Modifier" />
+            android:text="Ajouter" />
 
-        <Button
-            android:id="@+id/suppCo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Supprimer" />
     </LinearLayout>
 </RelativeLayout>

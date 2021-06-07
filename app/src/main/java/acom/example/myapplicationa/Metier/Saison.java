@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Saison {
     private int id_saison;
-    private Date dateDebut;
-    private Date dateFin;
+    private String dateDebut;
+    private String dateFin;
 
-    public Saison (int id, Date datd, Date datef){
+    public Saison (int id, String datd, String datef){
         id_saison=id;
         dateDebut=datd;
         dateFin=datef;
@@ -17,28 +17,26 @@ public class Saison {
         return id_saison;
     }
 
-    public Date getDateDebut() {
+    public String getDateDebut() {
         return dateDebut;
     }
 
-    public Date getDateFin() {
+    public String getDateFin() {
         return dateFin;
     }
 
-    public void setDateDebut(Date dateDebut) {
+    public void setDateDebut(String dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public void setDateFin(Date dateFin) {
+    public void setDateFin(String dateFin) {
         this.dateFin = dateFin;
     }
 
     @Override
     public String toString() {
-        return "Saison{" +
-                "id_saison=" + id_saison +
-                ", dateDebut=" + dateDebut +
-                ", dateFin=" + dateFin +
-                '}';
+        return id_saison +
+                " " + dateDebut +
+                "-" + dateFin;
     }
 }

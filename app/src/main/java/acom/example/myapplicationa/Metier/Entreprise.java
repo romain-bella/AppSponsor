@@ -85,14 +85,12 @@ public class Entreprise {
 
     @Override
     public String toString() {
-        return "Entreprise{" +
-                "id_E=" + id_E +
-                ", raison_sociale='" + raison_sociale + '\'' +
-                ", ville='" + ville + '\'' +
-                ", rue='" + rue + '\'' +
-                ", CP='" + CP + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", mail='" + mail + '\'' +
-                '}';
+        return id_E +
+                " " + raison_sociale + " " +
+                ville + " " +
+                rue + " " +
+                CP + " " +
+                telephone + " " +
+                mail;
     }
 }

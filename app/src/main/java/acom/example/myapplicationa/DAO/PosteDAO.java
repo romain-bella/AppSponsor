@@ -67,13 +67,23 @@ public class PosteDAO extends DAO<Poste>{
         return nbpostes;
     }
 
+    public int last(){
+        open();
+        Cursor curseur = db.query (Table_Poste, null,null,null,null,null,null);
+        curseur.moveToLast();
+        int i = curseur.getInt(0);
+        curseur.close();
+        close();
+        return i;
+    }
+
     public Poste read(long id) {
         open();
         Poste lePoste;
         db.isOpen();
         Cursor curseur = db.query(Table_Poste, null, Col_Id_POST+"="+id,null,null,null,null);
         curseur.moveToFirst();
-        lePoste = new Poste(curseur.getInt(0),curseur.getString(1));
+        lePoste = new Poste(curseur.getInt(0), curseur.getString(1));
         curseur.close();
         close();
         return lePoste;

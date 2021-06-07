@@ -13,7 +13,7 @@ public class Correspondant /*implements Parcelable*/ {
     private String mail;
     private Entreprise uneEntreprise;
     private Poste unPoste;
-    private HashMap<Saison, Float> lesDonnations;
+
 
     public Correspondant(int id, String nom, String prenom, String tel, String mail, Entreprise uneE, Poste unP){
         id_correspondant=id;
@@ -23,7 +23,7 @@ public class Correspondant /*implements Parcelable*/ {
         this.mail = mail;
         uneEntreprise=uneE;
         unPoste=unP;
-        lesDonnations = new HashMap<Saison, Float>();
+
     }
 
     public Correspondant (Correspondant unCo){
@@ -34,7 +34,7 @@ public class Correspondant /*implements Parcelable*/ {
         mail=unCo.getTelephone();
         uneEntreprise=unCo.getUneEntreprise();
         unPoste= unCo.getUnPoste();
-        lesDonnations = new HashMap<Saison, Float>();
+
     }
 
     public int getId_correspondant() {
@@ -89,13 +89,7 @@ public class Correspondant /*implements Parcelable*/ {
         this.unPoste = unPoste;
     }
 
-    public HashMap<Saison, Float> getLesDonnations() {
-        return lesDonnations;
-    }
 
-    public void setLesDonnations(Saison s, Float donnation) {
-        this.lesDonnations.put(s, donnation);
-    }
 
     @Override
     public String toString() {

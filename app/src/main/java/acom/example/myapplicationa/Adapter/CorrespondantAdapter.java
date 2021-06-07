@@ -12,13 +12,13 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+import acom.example.myapplicationa.Metier.Correspondant;
 import acom.example.myapplicationa.Metier.Entreprise;
 import acom.example.myapplicationa.R;
 
-public class EntrepriseAdapter extends ArrayAdapter<Entreprise> {
-
-    public EntrepriseAdapter(Context context, ArrayList<Entreprise> listeEntreprise){
-        super(context, 0, listeEntreprise);
+public class CorrespondantAdapter extends ArrayAdapter<Correspondant> {
+    public CorrespondantAdapter(Context context, ArrayList<Correspondant> listeC){
+        super(context, 0, listeC);
     }
 
     @NonNull
@@ -35,16 +35,18 @@ public class EntrepriseAdapter extends ArrayAdapter<Entreprise> {
     private View initView(int position, View convertView, ViewGroup parent){
         if (convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.entreprise_spinner, parent, false
+                    R.layout.correspondant_spinner, parent, false
             );
         }
-        TextView textViewName = convertView.findViewById(R.id.textView17);
+        TextView nomE = convertView.findViewById(R.id.textView24);
+        TextView nomC = convertView.findViewById(R.id.textView25);
+        TextView prenomC = convertView.findViewById(R.id.textView17);
 
-        Entreprise currentItem = getItem(position);
+        Correspondant currentItem = getItem(position);
 
-        textViewName.setText(currentItem.getRaison_sociale());
+        nomE.setText(currentItem.getUneEntreprise().getRaison_sociale());
+        nomC.setText(currentItem.getNom_co());
+        prenomC.setText(currentItem.getPrenom_co());
         return convertView;
     }
 }
-
-
