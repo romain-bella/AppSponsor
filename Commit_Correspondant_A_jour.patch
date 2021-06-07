@@ -1,0 +1,13 @@
+Index: app/src/main/java/acom/example/myapplicationa/IHM/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/acom/example/myapplicationa/IHM/MainActivity.java	(revision 465752902524f4d3382e875db53d4373e4acca61)
++++ app/src/main/java/acom/example/myapplicationa/IHM/MainActivity.java	(date 1623042817581)
+@@ -97,5 +97,4 @@
+             }
+         });
+     }
+-
+ }
