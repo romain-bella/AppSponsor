@@ -1,0 +1,17 @@
+AutoExport  ---> bon
+Bfc	- DEJA ENVOYES
+Classe Danger --> bon
+Segmentation --> bon
+Code Douanier --> a revoir  --> OK
+Etat / Pays  --> bon
+Groupe Appro  --> bon 
+Groupe Produit --> a revoir --> OK
+Groupe Techno Distribution --> bon
+Numero UN --> bon
+Objet Comptable --> bon
+Plateforme Finance --> bon
+Reach --> bon
+Secteur Activite	- DEJA ENVOYES
+Segmentation --> bon
+Unite De Mesure --> a revoir  --> OK
+Groupe Techno --> a donner  --> OK
